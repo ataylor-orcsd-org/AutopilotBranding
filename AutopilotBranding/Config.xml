@@ -1,5 +1,5 @@
 <Config>
-  <TimeZone></TimeZone>
+  <TimeZone>Eastern Standard Time</TimeZone>
   <RemoveApps>
     <App>Microsoft.BingNews</App>
     <App>Microsoft.BingWeather</App>
@@ -25,6 +25,13 @@
     <App>Microsoft.ZuneVideo</App>
     <App>Clipchamp.Clipchamp</App>
     <App>Microsoft.PowerAutomateDesktop</App>
+    <App>Microsoft.XboxGameOverlay</App>
+    <App>Microsoft.XboxGamingOverlay</App>
+    <App>MicrosoftTeams</App>
+    <App>Microsoft.SurfaceHub</App>
+    <App>Microsoft.OutlookForWindows</App>
+    <App>Microsoft.549981C3F5F10</App>
+    <App>Microsoft.Windows.DevHome</App>
   </RemoveApps>
   <OneDriveSetup>https://go.microsoft.com/fwlink/?linkid=844652</OneDriveSetup>
   <AddFeatures>
@@ -45,14 +52,14 @@
   <Language></Language>
   <!-- If you want to set a language, customize and reference this file: <Language>Language.xml</Language> -->
   <DefaultApps>Associations.xml</DefaultApps>
-  <RegisteredOwner>Autopilot User</RegisteredOwner>
-  <RegisteredOrganization>Contoso</RegisteredOrganization>
-  <OEMInfo>
+  <RegisteredOwner>ORCSD User</RegisteredOwner>
+  <RegisteredOrganization>Oyster River Cooperative School District</RegisteredOrganization>
+  <!--OEMInfo>
     <Manufacturer>Contoso</Manufacturer>
     <Model>PC</Model>
-    <Logo>Contoso.bmp</Logo>
+    <Logo>orcsd250.bmp</Logo>
     <SupportPhone>+1 800-555-1212</SupportPhone>
     <SupportHours>8am-5pm PST</SupportHours>
     <SupportURL>http://www.contoso.com</SupportURL>
-  </OEMInfo>
+  </OEMInfo-->
 </Config>
