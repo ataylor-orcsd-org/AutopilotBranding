@@ -61,12 +61,32 @@ reg.exe add "HKLM\TempUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes" /v 
 
 # STEP 2A: Stop Start menu from opening on first logon
 reg.exe add "HKLM\TempUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v StartShownOnUpgrade /t REG_DWORD /d 1 /f | Out-Host
+Log "Setting Autopilot theme as the new user default"
 
 # STEP 2B: Hide "Learn more about this picture" from the desktop
 reg.exe add "HKLM\TempUser\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" /t REG_DWORD /d 1 /f | Out-Host
+Log "Setting Autopilot theme as the new user default"
 
-# STEP 2C: Move Start menu to left of Taskbar
-reg.exe add "HKLM\TempUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAl" /t REG_DWORD /d 0 /f | Out-Host
+# STEP 2C: Customize Taskbar
+# Removes Task View from the Taskbar
+reg.exe add "HKLM\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f
+Log "Removes Task View from the Taskbar"
+ 
+# Removes Widgets from the Taskbar
+reg.exe add "HKLM\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDa /t REG_DWORD /d 0 /f
+Log "Removes Widgets from the Taskbar"
+ 
+# Removes Chat from the Taskbar
+reg.exe add "HKLM\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarMn /t REG_DWORD /d 0 /f
+Log "Removes Chat from the Taskbar"
+ 
+# Default StartMenu alignment 0=Left
+reg.exe add "HKLM\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f
+Log "Default StartMenu alignment 0=Left"
+ 
+# Removes search from the Taskbar
+reg.exe add "HKLM\Default\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v SearchboxTaskbarMode /t REG_DWORD /d 0 /f
+Log "Removes search from the Taskbar"
 
 reg.exe unload HKLM\TempUser | Out-Host
 
